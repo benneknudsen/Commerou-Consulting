@@ -124,6 +124,30 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
+.carousel-pip-container {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 50px;
+}
+
+.carousel-pip {
+  position: relative;
+  background-color: #bbb;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-pip-highlight {
+background-color: gray;
+}
+
 .page-footer {
   width: 100%;
   background-color: #111;

@@ -12,6 +12,20 @@ function initCarousels() {
 
     carouselElements[carouselCounter].classList.remove("hidden");
 
+    let pipContainer = document.createElement("DIV");
+    pipContainer.classList.add("carousel-pip-container");
+    carousel.appendChild(pipContainer)
+    for (let i = 0; i < carouselElements.length; i++) {
+      let pip = document.createElement("DIV");
+      pip.classList.add("carousel-pip");
+
+      if (i == 0) {
+        pip.classList.add("carousel-pip-highlight");
+      }
+
+      pipContainer.appendChild(pip);
+      }
+
     carousel.setAttribute("counter", 0);
   }
 }
