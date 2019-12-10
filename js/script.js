@@ -6,15 +6,23 @@ function initCarousels() {
   let carouselList = document.querySelectorAll(".carousel-container");
   for (let carousel of carouselList) {
     let carouselElements = carousel.children[0].children;
+
+    carousel.setAttribute("counter", 0);
+
+    // Not really necessary if you remember to add "hidden" class to all but the first of the carousel elements, but it's here as a failsafe
     for (let element of carouselElements) {
       element.classList.add("hidden");
     }
 
     carouselElements[carouselCounter].classList.remove("hidden");
+    //
 
+    // We could also define the pip container in the HTML, doesn't really make a big difference
     let pipContainer = document.createElement("DIV");
     pipContainer.classList.add("carousel-pip-container");
     carousel.appendChild(pipContainer)
+
+    // Fill the container with as many pips as there are elements in the carousel
     for (let i = 0; i < carouselElements.length; i++) {
       let pip = document.createElement("DIV");
       pip.classList.add("carousel-pip");
@@ -23,41 +31,60 @@ function initCarousels() {
         pip.classList.add("carousel-pip-highlight");
       }
 
-      pipContainer.appendChild(pip);
-      }
+      pip.onclick = function() {
+        setCarousel(carousel, i);
+      };
 
-    carousel.setAttribute("counter", 0);
+      pipContainer.appendChild(pip);
+    }
   }
 }
 
 function cycleCarouselLeft(element) {
-  let carouselCounter = Number(element.attributes.counter.value);
-  let carouselElements = element.children[0].children;
-  fadeOut(carouselElements[carouselCounter]);
-  carouselCounter--;
+  let carouselCounter = Number(element.attributes.counter.value) - 1;
+  let carouselLength = element.querySelector(".carousel-content").children.length; //element.children[0].children.length;
 
   if (carouselCounter < 0) {
-    carouselCounter += carouselElements.length;
+    carouselCounter += carouselLength;
   }
 
-  show(carouselElements[carouselCounter]);
-
-  element.setAttribute("counter", carouselCounter);
+  setCarousel(element, carouselCounter);
 }
 
 function cycleCarouselRight(element) {
-  let carouselCounter = Number(element.attributes.counter.value);
-  let carouselElements = element.children[0].children;
-  fadeOut(carouselElements[carouselCounter]);
-  carouselCounter++;
+  let carouselCounter = Number(element.attributes.counter.value) + 1;
+  let carouselLength = element.querySelector(".carousel-content").children.length;
 
-  if (carouselCounter > carouselElements.length - 1) {
-    carouselCounter -= carouselElements.length;
+  if (carouselCounter > carouselLength - 1) {
+    carouselCounter -= carouselLength;
   }
+
+  setCarousel(element, carouselCounter);
+}
+
+function setCarousel(element, index) {
+  let carouselCounter = Number(element.attributes.counter.value);
+  let carouselElements = element.querySelector(".carousel-content").children;
+  fadeOut(carouselElements[carouselCounter]);
+  carouselCounter = index;
 
   show(carouselElements[carouselCounter]);
 
   element.setAttribute("counter", carouselCounter);
+  updatePips(element);
+}
+
+function updatePips(element) {
+  let carouselCounter = Number(element.attributes.counter.value);
+  let pipList = element.querySelector(".carousel-pip-container").children;
+
+  for (let i = 0; i < pipList.length; i++) {
+    if (i == carouselCounter) {
+      pipList[i].classList.add("carousel-pip-highlight");
+    } else {
+      pipList[i].classList.remove("carousel-pip-highlight");
+    }
+  }
 }
 
 function fadeOut(element) {
