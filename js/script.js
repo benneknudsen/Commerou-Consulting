@@ -68,7 +68,7 @@ function setCarousel(element, index) {
   fadeOut(carouselElements[carouselCounter]);
   carouselCounter = index;
 
-  show(carouselElements[carouselCounter]);
+  fadeIn(carouselElements[carouselCounter]);
 
   element.setAttribute("counter", carouselCounter);
   updatePips(element);
@@ -101,6 +101,27 @@ function fadeOut(element) {
   }, FADE_RATE);
 }
 
+function fadeIn(element) {
+  let opacity = 0;
+  element.style.opacity = "0";
+  let fader = setInterval(function() {
+    if (opacity >= 1) {
+      clearInterval(fader);
+      element.style.opacity = "1";
+    } else {
+      opacity += FADE_RATE/FADE_DURATION;
+      element.style.opacity = opacity.toString();
+    }
+  }, FADE_RATE);
+  show(element);
+}
+
+function scrollDown() {
+  console.log("scrollolol");
+  let target = document.querySelector(".carousel-container");
+  window.scrollTo(0, window.innerHeight);
+}
+
 function hide(element) {
   element.classList.add("hidden");
 }
@@ -108,3 +129,12 @@ function hide(element) {
 function show(element) {
   element.classList.remove("hidden");
 }
+
+document.addEventListener("scroll", function() {
+  let header = document.querySelector(".page-header");
+  if (header.offsetTop > 20) {
+    header.classList.add("page-header-scrolled");
+  } else {
+    header.classList.remove("page-header-scrolled");
+  }
+})
