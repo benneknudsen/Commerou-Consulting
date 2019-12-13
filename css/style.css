@@ -3,19 +3,19 @@
 }
 
 html {
-
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Futura Light, sans-serif;
-  font-size: 14pt;
-  letter-spacing: 1px;
-  line-height: 140%;
-  background-color: #ddd;
-  color: black;
   --navy-blue: #000080;
   --the-orange: orange;
+  --bg-gray: #ddd;
+  font-family: Futura Light, sans-serif;
+  font-size: 13pt;
+  letter-spacing: 1px;
+  line-height: 140%;
+  background-color: white;
+  color: black;
 }
 
 h1, h2, h3, h4 {
@@ -34,6 +34,7 @@ h1, h2, h3, h4 {
   height: 100px;
   z-index: 3;
   transition-duration: 0.2s;
+  background-color: white;
 }
 
 .page-header-scrolled {
@@ -74,6 +75,10 @@ h1, h2, h3, h4 {
   border-color: #bbb;
 }
 
+.header-link-active {
+  border-color: #bbb !important;
+}
+
 .webshop-button {
   position: absolute;
   top: 50%;
@@ -100,34 +105,57 @@ h1, h2, h3, h4 {
   height: 100%;
 }
 
+/* CONTENT */
+
 .main-content {
   position: relative;
-  width: calc(100% - 300px);
-  left: 150px;
+  width: 100%;
 }
 
 .content-element {
-  width: 100%;
+  width: calc(100% - 300px);
   height: 400px;
-  margin-bottom: 100px;
+  padding: 100px 150px;
 }
 
-.content-element-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 100%;
-  margin-bottom: 150px;
-}
+/* BANNER */
 
 .banner {
-  padding-top: 80px;
+  position: relative;
+  padding-top: 50px;
   width: 40%;
-  height: calc(100vh - 180px);
+  height: calc(70vh - 150px);
   min-width: 450px;
 }
 
 .banner h1 {
+  position: relative;
   margin-bottom: 10px;
+}
+
+.banner p {
+  position: relative;
+}
+
+.banner-bg {
+  background-image: url("../img/Banner_BG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(70vh - 150px);
+  padding-top: 50px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.banner-portrait {
+  position: absolute;
+  height: 100%;
+  right: 200px;
+  bottom: 0;
 }
 
 .banner-link {
@@ -157,28 +185,11 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-.banner-link:last-child {
-  left: 100px;
+.banner .banner-link:last-child {
+  left: 250px;
 }
 
-.downarrow {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-100%) rotate(45deg);
-  width: 40px;
-  height: 40px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  cursor: pointer;
-  z-index: 2;
-  transition-duration: 0.2s;
-}
-
-.downarrow:hover {
-  width: 50px;
-  height: 50px;
-}
+/* CAROUSEL */
 
 .carousel-container {
   position: relative;
@@ -200,6 +211,131 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
+}
+
+.carousel-button-left {
+  position: absolute;
+  font-size: 50px;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  background-color: black;
+  background-clip: content-box;
+  width: 30px;
+  height: 2px;
+  padding: 24px 10px;
+  transition-duration: 0.2s;
+}
+
+.carousel-button-left::before {
+  content: "";
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  background-color: black;
+  transform: translateX(-50%) rotate(-45deg) translateX(50%);
+}
+
+.carousel-button-left::after {
+  content: "";
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  background-color: black;
+  transform: translateX(-50%) rotate(45deg) translateX(50%);
+}
+
+.carousel-button-right {
+  position: absolute;
+  font-size: 50px;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  cursor: pointer;
+  color: #555;
+  background-color: black;
+  background-clip: content-box;
+  width: 30px;
+  height: 2px;
+  padding: 24px 10px;
+  transition-duration: 0.2s;
+}
+
+.carousel-button-right::before {
+  content: "";
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  background-color: black;
+  transform: translateX(-50%) rotate(-45deg) translateX(50%);
+}
+
+.carousel-button-right::after {
+  content: "";
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  background-color: black;
+  transform: translateX(-50%) rotate(45deg) translateX(50%);
+}
+
+.carousel-button-left::selection,
+.carousel-button-right::selection {
+  color: black;
+  background-color: transparent;
+}
+
+.carousel-pip-container {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.carousel-pip {
+  position: relative;
+  background-color: #ccc;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.carousel-pip:hover {
+  background-color: #aaa;
+}
+
+.carousel-pip-highlight {
+  background-color: #666 !important;
+}
+
+/* LOWER ELEMENTS */
+
+.content-element-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: calc(100% - 300px);
+  padding: 100px 150px;
+  min-height: 400px;
+}
+
+.dark-bg {
+  background-color: var(--bg-gray);
 }
 
 .content-blurb {
@@ -243,96 +379,109 @@ h1, h2, h3, h4 {
   right: 0;
 }
 
-.carousel-button-left {
-  position: absolute;
-  font-size: 50px;
-  left: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #555;
-  /*
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  */
-
-  background-color: black;
-  background-clip: content-box;
-  width: 30px;
-  height: 2px;
-  padding: 14px 0;
+.content-webshop {
+  height: 500px;
 }
 
-.carousel-button-left::before {
-  content: "";
-  height: 2px;
-  width: 20px;
-  position: absolute;
-  top: 14px;
-  left: 0;
-  background-color: black;
-  transform: translateX(-50%) rotate(-45deg) translateX(50%);
+.content-cases {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80%;
+  max-height: 100%;
+  justify-content: space-between;
 }
 
-.carousel-button-left::after {
-  content: "";
-  height: 2px;
-  width: 20px;
-  position: absolute;
-  top: 14px;
-  left: 0;
-  background-color: black;
-  transform: translateX(-50%) rotate(45deg) translateX(50%);
+.content-cases img {
+  width: 33%;
 }
 
-.carousel-button-right {
-  position: absolute;
-  font-size: 50px;
-  right: -80px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #555;
+/* FOOTER */
+
+.page-footer {
+  position: relative;
+  width: 100%;
 }
 
-.carousel-button-left::selection,
-.carousel-button-right::selection {
-  color: black;
-  background-color: transparent;
+.content-collabs {
+  width: 100%;
+  min-height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-evenly;
+  padding: 50px 0;
 }
 
-.carousel-pip-container {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  transform: translateX(-50%);
+.content-collabs img {
+  max-height: 50%;
+  max-width: 20%;
+}
+
+.true-footer {
+  width: 100%;
+  background-color: #00002c;
+  color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  padding: 50px 0;
+  font-size: 12pt;
+  line-height: 24pt;
 }
 
-.carousel-pip {
+.true-footer h3 {
+  color: white;
+  font-size: 18pt;
+  margin-bottom: 20px;
+}
+
+.true-footer div {
   position: relative;
-  background-color: #ccc;
-  border-radius: 100px;
-  width: 10px;
-  height: 10px;
-  margin: 0 2px;
-  cursor: pointer;
-  transition-duration: 0.2s;
 }
 
-.carousel-pip:hover {
-  background-color: #aaa;
+.footer-thing {
+  margin-bottom: 8px;
 }
 
-.carousel-pip-highlight {
-  background-color: #666 !important;
+.footer-thing p {
+  position: relative;
+  left: 15%;
+  line-height: 20px;
 }
 
-.page-footer {
-  width: 100%;
-  background-color: #111;
+.footer-thing i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.footer-thing:first-of-type i {
+  font-size: 16pt;
+}
+
+.footer-some a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.footer-links a {
+  color: white;
+  display: block;
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 10px;
+  right: 150px;
+  color: white;
+  font-size: 10pt;
 }
 
 .hidden {

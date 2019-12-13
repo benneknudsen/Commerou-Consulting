@@ -116,12 +116,6 @@ function fadeIn(element) {
   show(element);
 }
 
-function scrollDown() {
-  console.log("scrollolol");
-  let target = document.querySelector(".carousel-container");
-  window.scrollTo(0, window.innerHeight);
-}
-
 function hide(element) {
   element.classList.add("hidden");
 }
@@ -129,7 +123,7 @@ function hide(element) {
 function show(element) {
   element.classList.remove("hidden");
 }
-
+/*
 document.addEventListener("scroll", function() {
   let header = document.querySelector(".page-header");
   if (header.offsetTop > 20) {
@@ -138,3 +132,4 @@ document.addEventListener("scroll", function() {
     header.classList.remove("page-header-scrolled");
   }
 })
+*/
