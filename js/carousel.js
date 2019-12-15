@@ -123,13 +123,3 @@ function hide(element) {
 function show(element) {
   element.classList.remove("hidden");
 }
-/*
-document.addEventListener("scroll", function() {
-  let header = document.querySelector(".page-header");
-  if (header.offsetTop > 20) {
-    header.classList.add("page-header-scrolled");
-  } else {
-    header.classList.remove("page-header-scrolled");
-  }
-})
-*/

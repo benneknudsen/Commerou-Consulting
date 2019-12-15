@@ -10,6 +10,7 @@ body {
   --navy-blue: #000080;
   --the-orange: orange;
   --bg-gray: #ddd;
+  --side-margin-width: 150px;
   font-family: Futura Light, sans-serif;
   font-size: 13pt;
   letter-spacing: 1px;
@@ -44,7 +45,7 @@ h1, h2, h3, h4 {
 .header-logo {
   position: absolute;
   top: 50%;
-  left: 150px;
+  left: var(--side-margin-width);
   transform: translateY(-50%);
   height: 70%;
 }
@@ -82,7 +83,7 @@ h1, h2, h3, h4 {
 .webshop-button {
   position: absolute;
   top: 50%;
-  right: 150px;
+  right: var(--side-margin-width);
   transform: translateY(-50%);
   text-decoration: none;
   padding: 0 15px;
@@ -113,9 +114,9 @@ h1, h2, h3, h4 {
 }
 
 .content-element {
-  width: calc(100% - 300px);
+  width: calc(100% - 2*var(--side-margin-width));
   height: 400px;
-  padding: 100px 150px;
+  padding: 100px var(--side-margin-width);
 }
 
 /* BANNER */
@@ -329,8 +330,8 @@ h1, h2, h3, h4 {
 .content-element-grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  width: calc(100% - 300px);
-  padding: 100px 150px;
+  width: calc(100% - 2*var(--side-margin-width));
+  padding: 100px var(--side-margin-width);
   min-height: 400px;
 }
 
@@ -404,15 +405,23 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-.content-collabs {
+.content-refs {
   width: 100%;
   min-height: 100px;
   position: relative;
+  background-color: white;
+  padding: 50px 0;
+}
+
+.content-refs h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.content-refs-logos {
   display: flex;
   flex-direction: row;
-  background-color: white;
   justify-content: space-evenly;
-  padding: 50px 0;
 }
 
 .content-collabs img {
@@ -479,10 +488,375 @@ h1, h2, h3, h4 {
 .footer-copyright {
   position: absolute;
   bottom: 10px;
-  right: 150px;
+  right: var(--side-margin-width);
   color: white;
   font-size: 10pt;
 }
+
+/* SUBPAGES */
+
+.subpage-content {
+  margin: 0 var(--side-margin-width) 150px var(--side-margin-width);
+  width: calc(100% - 2*var(--side-margin-width));
+}
+
+.subpage-banner {
+  position: relative;
+  width: 100%;
+}
+
+.subpage-blurb {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  margin: 30px 25%;
+}
+
+.subpage-blurb h1 {
+  margin-bottom: 20px;
+}
+
+.subpage-element {
+  padding: 80px 0;
+  border-top: 3px solid #ddd;
+}
+
+/* CONSULTING */
+
+.consult-icons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.consult-icons img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.consult-icons h4 {
+  text-align: center;
+  font-size: 14pt;
+  border-bottom: 1px solid #ddd;
+}
+
+.consult-icons div {
+  cursor: pointer;
+}
+
+.consult-element {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.consult-element-image {
+  position: relative;
+}
+
+.consult-element-image img {
+  width: 100%;
+}
+
+.consult-element-image::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.consult-element-text h3 {
+  position: relative;
+  left: -20px;
+  margin-bottom: 10px;
+  font-size: 18pt;
+}
+
+.consult-element-text p {
+  position: relative;
+  left: 30px;
+}
+
+.consult-element-text p::after {
+  display: block;
+  position: absolute;
+  content: "";
+  left: -50px;
+  top: 7px;
+  width: 30px;
+  height: 3px;
+  background-color: var(--the-orange);
+}
+
+.consult-contact {
+  display: block;
+  text-decoration: none;
+  color: black;
+  width: 150px;
+  border: 1px solid var(--the-orange);
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+  transition-duration: 0.2s;
+}
+
+.consult-contact:hover {
+  background-color: #eee;
+}
+
+/* TUTORIALS */
+
+.tutorial-element {
+
+}
+
+.tutorial-element>h2 {
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.tutorial-video-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.video-element {
+  position: relative;
+  width: 26%;
+  margin-bottom: 50px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+}
+
+.video-play-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-date, .video-length {
+  color: #888;
+  font-size: 10pt;
+}
+
+.video-length {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.video-length::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -10px;
+  right: 0;
+  width: 80px;
+  height: 2px;
+  background-color: var(--the-orange);
+}
+
+.tutorial-lists {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.tutorial-list-element {
+  width: 20%;
+}
+
+.tutorial-list-element p {
+  border-bottom: 1px solid var(--the-orange);
+  font-size: 14pt;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.tutorial-list-element ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tutorial-list-element li {
+  margin-bottom: 10px;
+}
+
+.tutorial-list-element li:before {
+  content: "•";
+  padding-right: 8px;
+  color: var(--the-orange);
+}
+
+.tutorial-list-element li a {
+  text-decoration: none;
+}
+
+/* OM OS */
+
+.about-employees {
+  position: relative;
+  padding: 50px var(--side-margin-width);
+  width: calc(100% - 2*var(--side-margin-width));
+  background-image: linear-gradient(to right, rgba(0, 0, 128, 0), rgba(0, 0, 128, 0.5));
+}
+
+.employees-paragraph {
+  position: relative;
+}
+
+.employees-paragraph:first-of-type {
+  margin-bottom: 50px;
+}
+
+.employees-paragraph h4 {
+  position: relative;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.employees-paragraph h4::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  left: 3px;
+  bottom: -35px;
+  background-color: var(--the-orange);
+}
+
+.employees-paragraph>p {
+  width: 50%;
+  padding-left: 50px;
+}
+
+.portrait-box {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  height: 300px;
+}
+
+.portrait-box img {
+  position: relative;
+  display: block;
+  height: 100%;
+  right: 0;
+}
+
+.portrait-subtitle {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+}
+
+.fact-box {
+  position: absolute;
+  top: 350px;
+  width: 100%;
+}
+
+.fact-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cases-title {
+  text-align: center;
+  margin: 80px 0 60px 0;
+  font-weight: 400;
+}
+
+.about-cases {
+  display: flex;
+  position: relative;
+  margin: 0 var(--side-margin-width) 100px var(--side-margin-width);
+  width: calc(100% - 2*var(--side-margin-width));
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.case-element {
+  position: relative;
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+.case-element img {
+  width: 100%;
+}
+
+/* CONTACT */
+
+.contact-content {
+  position: relative;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  margin: 60px 0;
+}
+
+.contact-content h2 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.contact-writingbox {
+  position: relative;
+  width: 100%;
+}
+
+.contact-info {
+  position: relative;
+  width: 50%;
+  margin: 0 0 0 auto;
+}
+
+.contact-info h4 {
+  font-size: 14pt;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.contact-info p:not(:first-of-type) {
+  white-space: nowrap;
+}
+
+.contact-info p:not(:first-of-type)::first-line {
+  font-weight: bold;
+}
+
+/* placing .hidden down here for absolute priority */
 
 .hidden {
   display: none !important;
