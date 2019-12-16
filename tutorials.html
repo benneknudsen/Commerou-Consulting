@@ -12,13 +12,20 @@
   <title>Commerou Consulting</title>
 </head>
 
-<body onload="scrollToHash('')">
+<body>
   <header class="page-header">
     <a href="index.html" class="header-logo">
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <nav class="header-buttons-container">
+      <a href="index.html">
+        Forside
+      </a>
       <a href="raadgivning.html">
         Rådgivning
       </a>
@@ -43,14 +50,14 @@
     <img src="img/raadgivning/Banner.png" class="subpage-banner">
     <section class="subpage-blurb">
       <h1>Tutorials</h1>
-      <p>Se videoer og læs dokumentationen på hvordan Arduinoer fungerer. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+      <p id="tutorials_blurb"></p>
     </section>
     <section class="subpage-content">
 
       <section class="subpage-element tutorial-element">
         <h2>Videoer</h2>
         <div class="tutorial-video-container">
+          <!--
           <div class="video-element">
             <div class="video-thumbnail">
               <img src="img/tutorials/Video1.png" alt="" class="video-thumbnail">
@@ -105,45 +112,13 @@
             <p class="video-date">12. dec. 2019</p>
             <p class="video-length">18:19</p>
           </div>
+        -->
         </div>
       </section>
 
       <section class="subpage-element tutorial-element">
         <h2>Dokumentation</h2>
         <div class="tutorial-lists">
-          <div class="tutorial-list-element">
-            <p>Atmega328p</p>
-            <ul>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-            </ul>
-          </div>
-          <div class="tutorial-list-element">
-            <p>Arduino UNO (R3)</p>
-            <ul>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-            </ul>
-          </div>
-          <div class="tutorial-list-element">
-            <p>ATmega2560</p>
-            <ul>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-              <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
-            </ul>
-          </div>
         </div>
       </section>
     </section>
@@ -186,7 +161,8 @@
     <p class="footer-copyright">© 2019 Commerou Consulting. All rights reserved.</p>
   </footer>
 
-  <script src="js/scroll.js" charset="utf-8"></script>
+  <script src="js/wp-import-tuts.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
 </body>
 
 </html>

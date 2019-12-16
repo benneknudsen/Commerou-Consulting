@@ -12,13 +12,20 @@
   <title>Commerou Consulting</title>
 </head>
 
-<body onload="scrollToHash('')">
+<body>
   <header class="page-header">
     <a href="index.html" class="header-logo">
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <nav class="header-buttons-container">
+      <a href="index.html">
+        Forside
+      </a>
       <a href="raadgivning.html">
         Rådgivning
       </a>
@@ -42,20 +49,14 @@
   <main>
     <img src="img/omos/Banner.png" class="subpage-banner">
     <section class="subpage-blurb">
-      <h1>Om os</h1>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+      <h1 id="page_title">Om os</h1>
+      <p id="page_blurb"></p>
     </section>
 
     <section class="about-employees">
       <div class="employees-paragraph">
-        <h4>Medarbejdere</h4>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          <br><br>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua..</p>
+        <h4 id="employees_title">Medarbejdere</h4>
+        <p id="employees_content"></p>
 
         <div class="portrait-box">
           <img src="img/omos/daniel-commerou.png" alt="Portræt af Daniel Commerou">
@@ -71,18 +72,14 @@
         </div>
       </div>
       <div class="employees-paragraph">
-        <h4>Erfaring</h4>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          <br><br>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua..</p>
+        <h4 id="experience_title">Erfaring</h4>
+        <p id="experience_content"></p>
       </div>
     </section>
 
-    <h2 class="cases-title">Cases</h2>
+    <h2 class="cases-title">Projekter</h2>
     <section class="about-cases">
+      <!--
       <div class="case-element">
         <img src="img/omos/Case1.png" alt="">
         <p>Case overskrift</p>
@@ -119,6 +116,7 @@
         <img src="img/omos/Case9.png" alt="">
         <p>Case overskrift</p>
       </div>
+    -->
     </section>
   </main>
 
@@ -159,7 +157,8 @@
     <p class="footer-copyright">© 2019 Commerou Consulting. All rights reserved.</p>
   </footer>
 
-  <script src="js/scroll.js" charset="utf-8"></script>
+  <script src="js/wp-import-omos.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
 </body>
 
 </html>

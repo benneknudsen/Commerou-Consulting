@@ -18,7 +18,14 @@
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <nav class="header-buttons-container">
+      <a href="index.html">
+        Forside
+      </a>
       <a href="raadgivning.html" class="header-link-active">
         Rådgivning
       </a>
@@ -43,7 +50,7 @@
     <img src="img/raadgivning/Banner.png" class="subpage-banner">
     <section class="subpage-blurb">
       <h1>Rådgivning</h1>
-      <p>Herunder kan du læse om hvilke områder vi er i stand til at rådgive om. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+      <p id="page_blurb">Herunder kan du læse om hvilke områder vi er i stand til at rådgive om. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
         et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
         dolore magna aliquyam erat, sed diam voluptua. At vero eos et.</p>
     </section>
@@ -74,12 +81,7 @@
         </div>
         <div class="consult-element-text">
           <h3>Konceptudvikling</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <p id="consult_concept"></p>
         </div>
       </section>
 
@@ -89,12 +91,7 @@
         </div>
         <div class="consult-element-text">
           <h3>Design</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <p id="consult_design"></p>
         </div>
       </section>
 
@@ -104,12 +101,7 @@
         </div>
         <div class="consult-element-text">
           <h3>Print udlæg</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <p id="consult_print"></p>
         </div>
       </section>
 
@@ -119,12 +111,7 @@
         </div>
         <div class="consult-element-text">
           <h3>Robotics</h3>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <p id="consult_robotics"></p>
         </div>
       </section>
 
@@ -172,6 +159,8 @@
   </footer>
 
   <script src="js/scroll.js" charset="utf-8"></script>
+  <script src="js/wp-import-raadgivning.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
 </body>
 
 </html>

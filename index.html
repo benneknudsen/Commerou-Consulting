@@ -18,7 +18,14 @@
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
     <nav class="header-buttons-container">
+      <a href="index.html" class="header-link-active">
+        Forside
+      </a>
       <a href="raadgivning.html">
         Rådgivning
       </a>
@@ -44,11 +51,7 @@
     </div>
     <div class="content-element banner">
       <h1>VELKOMMEN TIL<br>COMMEROU CONSULTING</h1>
-      <p>Hos Commerou Consulting står vi for en masse ting som Daniel nok selv vil skrive om. Vi vil gøre vores bedste for at give dig den bedste rådgivning som vi kan. Vi er også eksperter indenfor Arduino boards og tager vores ekspertise til nye
-        højder.</p>
-      <a href="kontakt.html" class="banner-link">
-        Book tid
-      </a>
+      <p id="front_blurb"></p>
       <a href="raadgivning.html" class="banner-link">
         Læs mere
       </a>
@@ -60,8 +63,7 @@
             <div class="content-blurb">
               <h3>Konceptudvikling</h3>
               <span>For entreprenøren</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p id="front_concept"></p>
               <a href="raadgivning.html#konceptudvikling" class="banner-link">Læs mere ⯈</a>
             </div>
             <div class="content-image-right">
@@ -72,8 +74,7 @@
             <div class="content-blurb">
               <h3>Design</h3>
               <span>For entreprenøren</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p id="front_design"></p>
               <a href="raadgivning.html#design" class="banner-link">Læs mere ⯈</a>
             </div>
             <div class="content-image-right">
@@ -84,8 +85,7 @@
             <div class="content-blurb">
               <h3>Print udlæg</h3>
               <span>For entreprenøren</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p id="front_print"></p>
               <a href="raadgivning.html#printudlaeg" class="banner-link">Læs mere ⯈</a>
             </div>
             <div class="content-image-right">
@@ -96,8 +96,7 @@
             <div class="content-blurb">
               <h3>Robotics</h3>
               <span>For entreprenøren</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p id="front_robotics"></p>
               <a href="raadgivning.html#robotics" class="banner-link">Læs mere ⯈</a>
             </div>
             <div class="content-image-right">
@@ -115,21 +114,11 @@
     </section>
     <section class="content-element-grid dark-bg">
       <div class="content-cases">
-        <img src="img/Case1.png" alt="">
-        <img src="img/Case2.png" alt="">
-        <img src="img/Case3.png" alt="">
-        <img src="img/Case4.png" alt="">
-        <img src="img/Case5.png" alt="">
-        <img src="img/Case6.png" alt="">
-        <img src="img/Case7.png" alt="">
-        <img src="img/Case8.png" alt="">
-        <img src="img/Case9.png" alt="">
       </div>
       <div class="content-blurb">
-        <h3>CASES</h3>
+        <h3>Projekter</h3>
         <span>Succeshistorier</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p id="front_projects"></p>
         <a href="omos.html" class="banner-link">Læs mere ⯈</a>
       </div>
     </section>
@@ -138,8 +127,7 @@
       <div class="content-blurb">
         <h3>Tutorials</h3>
         <span>Lær hvordan du bruger din Arduino</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p id="front_tutorials"></p>
         <a href="tutorials.html" class="banner-link">Se tutorials ⯈</a>
       </div>
       <div class="content-image-right">
@@ -154,7 +142,7 @@
       <div class="content-blurb">
         <h3>Besøg min webshop</h3>
         <span>Køb din Arduino her</span>
-        <p>Se vores udvalg af Arduinoer og andre komponenter i vores webshop.</p>
+        <p id="front_webshop"></p>
         <a href="webshop.html" class="banner-link">Se udvalget ⯈</a>
       </div>
     </section>
@@ -206,6 +194,8 @@
   </footer>
 
   <script src="js/carousel.js" charset="utf-8"></script>
+  <script src="js/wp-import-front.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
 </body>
 
 </html>
