@@ -128,7 +128,7 @@ h1, h2, h3, h4 {
 /* BANNER */
 .banner {
   position: relative;
-  padding-top: 50px;
+  padding-top: 75px;
   width: 40%;
   height: calc(70vh - 150px);
   min-width: 450px;
@@ -299,7 +299,7 @@ h1, h2, h3, h4 {
 .carousel-pip-container {
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 0;
   transform: translateX(-50%);
   display: flex;
   flex-direction: row;
@@ -330,7 +330,7 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 50% 50%;
   width: calc(100% - 2*var(--side-margin-width));
-  padding: 100px var(--side-margin-width);
+  padding: 90px var(--side-margin-width) 130px var(--side-margin-width);
   /*min-height: 400px;*/
 }
 
@@ -381,6 +381,7 @@ h1, h2, h3, h4 {
 
 .content-webshop {
   height: 400px;
+  padding-bottom: 20px;
 }
 
 .content-cases {
