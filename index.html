@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amiko:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/icon.png" type="image/png">
   <title>Commerou Consulting</title>
 </head>
 
@@ -18,10 +19,12 @@
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
+    <!-- Only visible below 750px in width -->
     <div class="mobile-menu-button" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </div>
 
+    <!-- Gets shuffled around for mobile responsiveness -->
     <nav class="header-buttons-container">
       <a href="index.html" class="header-link-active">
         Forside
@@ -40,6 +43,7 @@
       </a>
     </nav>
 
+    <!-- Intentionally separate from the other buttons, as it needs other positions -->
     <a href="webshop.html" class="webshop-button">
       <p>Webshop <i class="fas fa-shopping-cart"></i></p>
     </a>
@@ -47,6 +51,7 @@
   </header>
   <main class="main-content">
     <div class="banner-bg">
+      <!-- ... Should be replaced to show our client instead -->
       <img src="img/Gut.png" alt="Daniel" class="banner-portrait">
     </div>
     <div class="content-element banner">
@@ -57,9 +62,12 @@
       </a>
     </div>
     <section class="content-element">
+      <!-- Carousels are contained in an element with a .carousel-container tag -->
       <div class="carousel-container">
+        <!-- This contains the elements in the carousel that are cycled -->
         <div class="carousel-content">
-          <div class="carousel-element hidden">
+          <!-- A carousel element can contain whatever you want -->
+          <div class="carousel-element">
             <div class="content-blurb">
               <h3>Konceptudvikling</h3>
               <span>For entreprenøren</span>
@@ -70,6 +78,7 @@
               <img src="img/raadgivning/Konceptudvikling.png" alt="">
             </div>
           </div>
+          <!-- The elements beyond the first should start out hidden, but the JS has a failsafe even if you forget -->
           <div class="carousel-element hidden">
             <div class="content-blurb">
               <h3>Design</h3>
@@ -81,7 +90,7 @@
               <img src="img/raadgivning/Design.png" alt="">
             </div>
           </div>
-          <div class="carousel-element">
+          <div class="carousel-element hidden">
             <div class="content-blurb">
               <h3>Print udlæg</h3>
               <span>For entreprenøren</span>
@@ -104,12 +113,11 @@
             </div>
           </div>
         </div>
-        <div class="carousel-button-left" onclick="cycleCarouselLeft(this.parentElement)">
+        <!-- The arrows are made entirely with CSS, so appearance beyond line lengths and widths are hard to customize -->
+        <div class="carousel-button-left" onclick="cycleCarouselLeft(this.parentElement)"></div>
+        <div class="carousel-button-right" onclick="cycleCarouselRight(this.parentElement)"></div>
 
-        </div>
-        <div class="carousel-button-right" onclick="cycleCarouselRight(this.parentElement)">
-
-        </div>
+        <!-- The pips container is added in JS -->
       </div>
     </section>
     <section class="content-element-grid dark-bg">
@@ -118,6 +126,7 @@
       <div class="content-blurb">
         <h3>Projekter</h3>
         <span>Succeshistorier</span>
+        <!-- Content of the <p>'s is pulled from Wordpress -->
         <p id="front_projects"></p>
         <a href="omos.html" class="banner-link">Læs mere ⯈</a>
       </div>
@@ -150,12 +159,8 @@
   <footer class="page-footer">
     <section class="content-refs">
       <h2>Referencer</h2>
-      <div class="content-refs-logos">
-        <a href="#"><img src="https://via.placeholder.com/300x100" alt=""></a>
-        <a href="#"><img src="https://via.placeholder.com/300x100" alt=""></a>
-        <a href="#"><img src="https://via.placeholder.com/300x100" alt=""></a>
-        <a href="#"><img src="https://via.placeholder.com/300x100" alt=""></a>
-      </div>
+      <!-- Gets filled out from Wordpress -->
+      <div class="content-refs-logos"></div>
     </section>
     <section class="true-footer">
       <div class="footer-info">

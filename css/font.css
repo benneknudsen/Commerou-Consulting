@@ -1,3 +1,5 @@
+/* font-face rules for the Futura font */
+
 @font-face {
   font-family: "Futura";
   src: url("../fonts/Futura-Medium.ttf") format("trueType");

@@ -1,3 +1,6 @@
+// Due to our header, we have to do this manually for it to look good;
+// it scrolls to an element, with the height of the header taken into account.
+// Element ID is defined either by the location hash (if argument is empty) or by a given ID
 function scrollToHash(destination) {
   if (destination != "") {
     location.hash = destination;
