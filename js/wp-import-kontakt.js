@@ -3,7 +3,7 @@
 "use strict";
 
 // Defines the URL of the Wordpress site we're pulling from
-const url = "http://open-summit.dk/wordpress/wp-json/wp/v2/posts?_embed";
+const url = "https://open-summit.dk/wordpress/wp-json/wp/v2/posts?_embed";
 
 // Fetches data from Wordpress, filters it and calls appropriate functions
 fetch(url)
