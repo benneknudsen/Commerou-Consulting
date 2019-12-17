@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Amiko:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/icon.png" type="image/png">
+  <title>Commerou Consulting</title>
+</head>
+
+<body onload="scrollToHash('')">
+  <header class="page-header">
+    <a href="index.html" class="header-logo">
+      <img src="img/logo.png" alt="Commerou Consulting logo">
+    </a>
+
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav class="header-buttons-container">
+      <a href="index.html">
+        Forside
+      </a>
+      <a href="raadgivning.html" class="header-link-active">
+        Rådgivning
+      </a>
+      <a href="tutorials.html">
+        Tutorials
+      </a>
+      <a href="omos.html">
+        Om os
+      </a>
+      <a href="kontakt.html">
+        Kontakt
+      </a>
+    </nav>
+
+    <a href="webshop.html" class="webshop-button">
+      <p>Webshop <i class="fas fa-shopping-cart"></i></p>
+    </a>
+
+  </header>
+
+  <main>
+    <img src="img/raadgivning/Banner.png" class="subpage-banner">
+    <section class="subpage-blurb">
+      <h1>Rådgivning</h1>
+      <p id="page_blurb">Herunder kan du læse om hvilke områder vi er i stand til at rådgive om. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+        et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et.</p>
+    </section>
+    <section class="subpage-content">
+
+      <section class="consult-icons">
+        <div onclick="scrollToHash('konceptudvikling')">
+          <img src="img/raadgivning/Konceptudvikling_icon.png" alt="Konceptudvikling">
+          <h4>Konceptudvikling</h4>
+        </div>
+        <div onclick="scrollToHash('design')">
+          <img src="img/raadgivning/Design_icon.png" alt="Design">
+          <h4>Design</h4>
+        </div>
+        <div onclick="scrollToHash('printudlaeg')">
+          <img src="img/raadgivning/Elektronik_icon.png" alt="Print udlæg">
+          <h4>Print udlæg</h4>
+        </div>
+        <div onclick="scrollToHash('robotics')">
+          <img src="img/raadgivning/Robotics_icon.png" alt="Robotics">
+          <h4>Robotics</h4>
+        </div>
+      </section>
+
+      <section class="subpage-element consult-element" id="konceptudvikling_a">
+        <div class="consult-element-image">
+          <img src="img/raadgivning/Konceptudvikling.png" alt="Konceptudvikling">
+        </div>
+        <div class="consult-element-text">
+          <h3>Konceptudvikling</h3>
+          <p id="consult_concept"></p>
+        </div>
+      </section>
+
+      <section class="subpage-element consult-element" id="design_a">
+        <div class="consult-element-image">
+          <img src="img/raadgivning/Design.png" alt="Design">
+        </div>
+        <div class="consult-element-text">
+          <h3>Design</h3>
+          <p id="consult_design"></p>
+        </div>
+      </section>
+
+      <section class="subpage-element consult-element" id="printudlaeg_a">
+        <div class="consult-element-image">
+          <img src="img/raadgivning/Elektronik.png" alt="Elektronik">
+        </div>
+        <div class="consult-element-text">
+          <h3>Print udlæg</h3>
+          <p id="consult_print"></p>
+        </div>
+      </section>
+
+      <section class="subpage-element consult-element" id="robotics_a">
+        <div class="consult-element-image">
+          <img src="img/raadgivning/Robotics.png" alt="Robotics">
+        </div>
+        <div class="consult-element-text">
+          <h3>Robotics</h3>
+          <p id="consult_robotics"></p>
+        </div>
+      </section>
+
+      <a href="kontakt.html" class="consult-contact">
+        Tag kontakt
+      </a>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <section class="true-footer">
+      <div class="footer-info">
+        <h3>Information</h3>
+        <p>Commerou Consulting IVS</p>
+        <p>CVR-nr. DK39940752</p>
+        <div class="footer-thing">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Rådmandsløkken 7, 1. tv<br>6400 Sønderborg</p>
+        </div>
+        <div class="footer-thing">
+          <i class="far fa-envelope"></i>
+          <p>contact@ccdenmark.dk</p>
+        </div>
+        <div class="footer-thing">
+          <i class="fas fa-phone"></i>
+          <p>+45 53381721</p>
+        </div>
+      </div>
+      <div class="footer-some">
+        <h3>Følg mig</h3>
+        <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+      </div>
+      <div class="footer-links">
+        <h3>Links</h3>
+        <a href="raadgivning.html">Rådgivning</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="omos.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="webshop.html">Webshop</a>
+      </div>
+    </section>
+    <p class="footer-copyright">© 2019 Commerou Consulting. All rights reserved.</p>
+  </footer>
+
+  <script src="js/scroll.js" charset="utf-8"></script>
+  <script src="js/wp-import-raadgivning.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
+</body>
+
+</html>

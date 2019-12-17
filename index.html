@@ -6,56 +6,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link href="https://fonts.googleapis.com/css?family=Amiko:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amiko:400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/icon.png" type="image/png">
   <title>Commerou Consulting</title>
 </head>
 
-<body>
+<body onload="initCarousels()">
   <header class="page-header">
     <a href="index.html" class="header-logo">
       <img src="img/logo.png" alt="Commerou Consulting logo">
     </a>
 
-    <div class="header-buttons-container">
-      <a href="#">
-        Button
-      </a>
-      <a href="#">
-        Button
-      </a>
-      <a href="#">
-        Button
-      </a>
-      <a href="#">
-        Button
-      </a>
+    <!-- Only visible below 750px in width -->
+    <div class="mobile-menu-button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
     </div>
 
-    <a href="#" class="webshop-button">
+    <!-- Gets shuffled around for mobile responsiveness -->
+    <nav class="header-buttons-container">
+      <a href="index.html" class="header-link-active">
+        Forside
+      </a>
+      <a href="raadgivning.html">
+        Rådgivning
+      </a>
+      <a href="tutorials.html">
+        Tutorials
+      </a>
+      <a href="omos.html">
+        Om os
+      </a>
+      <a href="kontakt.html">
+        Kontakt
+      </a>
+    </nav>
+
+    <!-- Intentionally separate from the other buttons, as it needs other positions -->
+    <a href="webshop.html" class="webshop-button">
       <p>Webshop <i class="fas fa-shopping-cart"></i></p>
     </a>
 
   </header>
   <main class="main-content">
-    <div class="content-element">
-      <h1>test</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="banner-bg">
+      <!-- ... Should be replaced to show our client instead -->
+      <img src="img/Gut.png" alt="Daniel" class="banner-portrait">
     </div>
-    <div class="content-element">
+    <div class="content-element banner">
+      <h1>VELKOMMEN TIL<br>COMMEROU CONSULTING</h1>
+      <p id="front_blurb"></p>
+      <a href="raadgivning.html" class="banner-link">
+        Læs mere
+      </a>
+    </div>
+    <section class="content-element">
+      <!-- Carousels are contained in an element with a .carousel-container tag -->
+      <div class="carousel-container">
+        <!-- This contains the elements in the carousel that are cycled -->
+        <div class="carousel-content">
+          <!-- A carousel element can contain whatever you want -->
+          <div class="carousel-element">
+            <div class="content-blurb">
+              <h3>Konceptudvikling</h3>
+              <span>For entreprenøren</span>
+              <p id="front_concept"></p>
+              <a href="raadgivning.html#konceptudvikling" class="banner-link">Læs mere ⯈</a>
+            </div>
+            <div class="content-image-right">
+              <img src="img/raadgivning/Konceptudvikling.png" alt="">
+            </div>
+          </div>
+          <!-- The elements beyond the first should start out hidden, but the JS has a failsafe even if you forget -->
+          <div class="carousel-element hidden">
+            <div class="content-blurb">
+              <h3>Design</h3>
+              <span>For entreprenøren</span>
+              <p id="front_design"></p>
+              <a href="raadgivning.html#design" class="banner-link">Læs mere ⯈</a>
+            </div>
+            <div class="content-image-right">
+              <img src="img/raadgivning/Design.png" alt="">
+            </div>
+          </div>
+          <div class="carousel-element hidden">
+            <div class="content-blurb">
+              <h3>Print udlæg</h3>
+              <span>For entreprenøren</span>
+              <p id="front_print"></p>
+              <a href="raadgivning.html#printudlaeg" class="banner-link">Læs mere ⯈</a>
+            </div>
+            <div class="content-image-right">
+              <img src="img/raadgivning/Elektronik.png" alt="">
+            </div>
+          </div>
+          <div class="carousel-element hidden">
+            <div class="content-blurb">
+              <h3>Robotics</h3>
+              <span>For entreprenøren</span>
+              <p id="front_robotics"></p>
+              <a href="raadgivning.html#robotics" class="banner-link">Læs mere ⯈</a>
+            </div>
+            <div class="content-image-right">
+              <img src="img/raadgivning/Robotics.png" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- The arrows are made entirely with CSS, so appearance beyond line lengths and widths are hard to customize -->
+        <div class="carousel-button-left" onclick="cycleCarouselLeft(this.parentElement)"></div>
+        <div class="carousel-button-right" onclick="cycleCarouselRight(this.parentElement)"></div>
 
-    </div>
-    <div class="content-element">
+        <!-- The pips container is added in JS -->
+      </div>
+    </section>
+    <section class="content-element-grid dark-bg">
+      <div class="content-cases">
+      </div>
+      <div class="content-blurb">
+        <h3>Projekter</h3>
+        <span>Succeshistorier</span>
+        <!-- Content of the <p>'s is pulled from Wordpress -->
+        <p id="front_projects"></p>
+        <a href="omos.html" class="banner-link">Læs mere ⯈</a>
+      </div>
+    </section>
 
-    </div>
-    <div class="content-element">
+    <section class="content-element-grid">
+      <div class="content-blurb">
+        <h3>Tutorials</h3>
+        <span>Lær hvordan du bruger din Arduino</span>
+        <p id="front_tutorials"></p>
+        <a href="tutorials.html" class="banner-link">Se tutorials ⯈</a>
+      </div>
+      <div class="content-image-right">
+        <img src="img/Arduino_tut.png" alt="Arduino tutorials">
+      </div>
+    </section>
 
-    </div>
+    <section class="content-element-grid dark-bg content-webshop">
+      <div class="content-image">
+        <img src="img/Webshop.png" alt="webshop">
+      </div>
+      <div class="content-blurb">
+        <h3>Besøg min webshop</h3>
+        <span>Køb din Arduino her</span>
+        <p id="front_webshop"></p>
+        <a href="webshop.html" class="banner-link">Se udvalget ⯈</a>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
-
+    <section class="content-refs">
+      <h2>Referencer</h2>
+      <!-- Gets filled out from Wordpress -->
+      <div class="content-refs-logos"></div>
+    </section>
+    <section class="true-footer">
+      <div class="footer-info">
+        <h3>Information</h3>
+        <p>Commerou Consulting IVS</p>
+        <p>CVR-nr. DK39940752</p>
+        <div class="footer-thing">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Rådmandsløkken 7, 1. tv<br>6400 Sønderborg</p>
+        </div>
+        <div class="footer-thing">
+          <i class="far fa-envelope"></i>
+          <p>contact@ccdenmark.dk</p>
+        </div>
+        <div class="footer-thing">
+          <i class="fas fa-phone"></i>
+          <p>+45 53381721</p>
+        </div>
+      </div>
+      <div class="footer-some">
+        <h3>Følg mig</h3>
+        <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+      </div>
+      <div class="footer-links">
+        <h3>Links</h3>
+        <a href="raadgivning.html">Rådgivning</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="omos.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="webshop.html">Webshop</a>
+      </div>
+    </section>
+    <p class="footer-copyright">© 2019 Commerou Consulting. All rights reserved.</p>
   </footer>
+
+  <script src="js/carousel.js" charset="utf-8"></script>
+  <script src="js/wp-import-front.js" charset="utf-8"></script>
+  <script src="js/menu.js" charset="utf-8"></script>
 </body>
 
 </html>
